@@ -3,6 +3,10 @@ puts "Guess a number between 1 and 100"  # => nil
 number_of_guesses = 1                    # => 1
 guesses = []                             # => []
 
+def random_number
+  return 
+end
+
 def already_guessed (guess, guesses)
   if guesses.include? guess
     return "Really? #{guess} Again?"
