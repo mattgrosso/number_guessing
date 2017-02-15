@@ -1,8 +1,8 @@
-puts "Guess a number between 1 and 100"  # => nil
+puts "Guess a number between 1 and 100"
 
 def random_number
-  return (1..100).to_a.sample  # => 50
-end                            # => :random_number
+  return (1..100).to_a.sample
+end
 
 def already_guessed (guess, guesses)
   if guesses.include? guess
@@ -11,7 +11,7 @@ def already_guessed (guess, guesses)
     guesses << guess
     return ""
   end
-end                              # => :already_guessed
+end
 
 def bad_guess (guess, low, high)
   if guess > high
@@ -29,16 +29,16 @@ def compare_to_random (guess, random)
   elsif guess > random
     return "high"
   end
-end                                    # => :compare_to_random
+end
 
-random = random_number  # => 50
-number_of_guesses = 1   # => 1
-guesses = []            # => []
+random = random_number
+number_of_guesses = 1
+guesses = []
 lowest_possible = 1
 highest_possible = 100
 
 loop do
-  input = gets.chomp.to_i  # ~> NoMethodError: undefined method `chomp' for nil:NilClass
+  input = gets.chomp.to_i
 
   if number_of_guesses > 4
     puts "You lose"
@@ -69,12 +69,3 @@ loop do
 
   number_of_guesses += 1
 end
-
-# >> Guess a number between 1 and 100
-
-# ~> NoMethodError
-# ~> undefined method `chomp' for nil:NilClass
-# ~>
-# ~> /Users/MJG/Desktop/IronCode/RubyAudit/number_guessing/guessing_game.rb:32:in `block in <main>'
-# ~> /Users/MJG/Desktop/IronCode/RubyAudit/number_guessing/guessing_game.rb:31:in `loop'
-# ~> /Users/MJG/Desktop/IronCode/RubyAudit/number_guessing/guessing_game.rb:31:in `<main>'
